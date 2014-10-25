@@ -1,0 +1,10 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    pocket-classes (0.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  pocket-classes (~> 0.0.1)
