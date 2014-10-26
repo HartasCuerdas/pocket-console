@@ -1,4 +1,6 @@
-# Pocket Console
+# Pocket Console [![Gem Version](https://badge.fury.io/rb/pocket-console.svg)](http://badge.fury.io/rb/pocket-console) [![Dependency Status](https://gemnasium.com/HartasCuerdas/pocket-console.svg)](https://gemnasium.com/HartasCuerdas/pocket-console)
+
+[![Code Climate](https://codeclimate.com/github/HartasCuerdas/pocket-console/badges/gpa.svg)](https://codeclimate.com/github/HartasCuerdas/pocket-console) [![Inline docs](http://inch-ci.org/github/HartasCuerdas/pocket-console.svg?branch=master&style=flat)](http://inch-ci.org/github/HartasCuerdas/pocket-console)
 
 Stats from [Pocket](http://getpocket.com) on your console.
 
