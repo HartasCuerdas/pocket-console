@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'pocket-console'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.date        = '2014-10-25'
   s.summary     = 'Stats from Pocket on your console'
   s.add_runtime_dependency 'pocket-classes', '~> 0.0.1'
@@ -11,7 +11,8 @@ Gem::Specification.new do |s|
                     'lib/pocketConsole.rb',
                     'lib/itemStats.rb',
                     'lib/tagStats.rb',
-                    'lib/itemsPrinter.rb'
+                    'lib/itemsPrinter.rb',
+                    'CHANGELOG.md'
                   ]
   s.homepage    = 'http://rubygems.org/gems/pocket-console'
   s.license     = 'MIT'

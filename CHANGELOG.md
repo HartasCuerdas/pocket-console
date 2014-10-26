@@ -1,6 +1,6 @@
 # Changelog
 
-0.0.3 (unreleased)
+0.0.3
 -----
 * [Added CHANGELOG and CHANGELOG.md.](https://github.com/HartasCuerdas/pocket-console/commit/master)
 
