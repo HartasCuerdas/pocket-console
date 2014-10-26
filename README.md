@@ -6,6 +6,10 @@ Stats from [Pocket](http://getpocket.com) on your console.
 
 [Pocket Console on RubyGems.org](https://rubygems.org/gems/pocket-console)
 
+## tl;dr Working example
+
+We have implemented a working example: [ruPocket](https://github.com/HartasCuerdas/ruPocket)
+
 ## Gem brightness
 
 This gem provides methods to output stats about Pocket tags.
