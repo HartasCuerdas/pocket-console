@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'pocket-console'
-  s.version     = '0.1.1'
+  s.version     = '0.1.2'
   s.date        = '2014-10-28'
   s.summary     = 'Stats from Pocket on your console'
   s.add_runtime_dependency 'pocket-classes', '~> 0.0.1'

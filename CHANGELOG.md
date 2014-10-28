@@ -1,3 +1,7 @@
+# 0.1.2
+
+* Added 'Less Unread'. Tags that are associated to the lowest amount of unread items.
+
 # 0.1.1
 
 * Added 'Less Used Tags'
