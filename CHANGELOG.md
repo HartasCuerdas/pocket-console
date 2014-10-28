@@ -1,3 +1,7 @@
+# 0.1.1
+
+* Added 'Less Used Tags'
+
 # 0.1.0
 
 * Added read percentage for General Stats
