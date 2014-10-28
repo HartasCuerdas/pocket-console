@@ -14,46 +14,67 @@ We have implemented a working example: [ruPocket](https://github.com/HartasCuerd
 
 This gem provides methods to output stats about Pocket tags.
 
-1. General Stats
+1. Total for Tagged & Untagged items, includes percentage for already read items.
 2. Most Used tags
-3. Most Unread. Tags that were assigned to the most large amount of items.
+3. Less Used tags
+4. Most Unread. Tags that were assigned to the most large amount of items.
 
 Stats are presented in tables, formatted as you can see below:
 
-    ====================
-       General Stats
-    --------------------
-    Tagged items:   50
-    Untagged items: 30
-    --------------------
+    ==============================
+            General Stats
+    ------------------------------
+    Tagged items:   567 (29% read)
+    Untagged items: 787 (65% read)
+    ------------------------------
     
-    ================================
-         Tag Stats - Most Used
-    --------------------------------
-    tag          |  total  |  unread
-    pocket       |     16  |       3
-    dev          |      7  |       5
-    ux           |      4  |       1
-    techonomics  |      4  |       0
-    rails        |      2  |       2
-    things       |      2  |       2
-    history      |      2  |       1
-    ifttt        |      2  |       1
-    ios          |      2  |       2
-    node.js      |      2  |       2
-    ================================
+    =================================
+          Tag Stats - Most Used
+    ---------------------------------
+    tag           |  total  |  unread
+    ---------------------------------
+    dev           |    147  |     106
+    ifttt         |     97  |      68
+    reddit        |     83  |      56
+    ios           |     37  |      33
+    angularjs     |     34  |      26
+    =================================
     
-    ================================
+    =================================
+          Tag Stats - Less Used
+    ---------------------------------
+    tag           |  total  |  unread
+    ---------------------------------
+    running       |      2  |       2
+    mongodb       |      2  |       1
+    transport     |      2  |       2
+    design        |      2  |       2
+    phonegap      |      3  |       3
+    css           |      3  |       2
+    git           |      3  |       2
+    node.js       |      3  |       3
+    multicultural |      3  |       2
+    tips          |      4  |       2
+    diigo         |      4  |       0
+    javascript    |      4  |       4
+    =================================
+
+    =================================
          Tag Stats - Most Unread
-    --------------------------------
-    tag          |  unread  |  total
-    dev          |       5  |      7
-    pocket       |       3  |     16
-    rails        |       2  |      2
-    things       |       2  |      2
-    ios          |       2  |      2
-    node.js      |       2  |      2
-    ================================
+    ---------------------------------
+    tag           |  unread  |  total
+    ---------------------------------
+    dev           |     106  |    147
+    ios           |      33  |     37
+    rails         |      29  |     33
+    android       |      27  |     27
+    angularjs     |      26  |     34
+    kinvey        |      24  |     24
+    youtube       |      16  |     18
+    ruby          |      16  |     18
+    functional    |      14  |     14
+    api           |      13  |     13
+    =================================
 
 ## Installation
 
