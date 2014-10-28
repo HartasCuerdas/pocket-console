@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'pocket-console'
-  s.version     = '0.0.3'
-  s.date        = '2014-10-25'
+  s.version     = '0.1.0'
+  s.date        = '2014-10-28'
   s.summary     = 'Stats from Pocket on your console'
   s.add_runtime_dependency 'pocket-classes', '~> 0.0.1'
   s.description = 'Stats about Pocket tags, on your console.'

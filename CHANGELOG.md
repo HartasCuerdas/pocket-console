@@ -1,6 +1,10 @@
+# 0.1.0
+
+* Added read percentage for General Stats
+
 # 0.0.3
 
-* [Added CHANGELOG and CHANGELOG.md.](https://github.com/HartasCuerdas/pocket-console/commit/master)
+* Added CHANGELOG.md.
 
 # 0.0.2
 

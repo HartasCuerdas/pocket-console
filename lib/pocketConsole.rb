@@ -1,8 +1,10 @@
 class PocketConsole
   
-  def initialize(taggedItems, untaggedItems)
+  def initialize(taggedItems, untaggedItems, readTaggedItems, readUntaggedItems)
     @taggedItems = taggedItems
     @untaggedItems = untaggedItems
+    @readTaggedItems = readTaggedItems
+    @readUntaggedItems = readUntaggedItems    
     @tagCollection = TagCollection.new(taggedItems)
   end
 
@@ -15,7 +17,10 @@ class PocketConsole
   end
 
   def printGeneralStats
-    itemStats = ItemStats.new(@taggedItems, @untaggedItems)
+    itemStats = ItemStats.new(
+      @taggedItems, @untaggedItems,
+      @readTaggedItems, @readUntaggedItems
+    )
     itemStats.print
   end
 
