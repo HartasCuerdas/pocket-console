@@ -19,6 +19,7 @@ This gem provides methods to output stats about Pocket tags.
 3. Less Used tags
 4. Most Unread. Tags that are associated to the greatest amount of unread items.
 5. Less Unread. Tags that are associated to the lowest amount of unread items.
+6. **Stats for specific tags**. Show stats for the tags you are interested in.
 
 Stats are presented in tables, formatted as you can see below:
 
