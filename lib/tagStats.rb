@@ -55,6 +55,7 @@ class TagStats
     if (!specificTags.empty?)
       aux = @tags
       @tags = specificTags
+      puts ''
       printMostUnread
       puts ''
       @tags = aux
