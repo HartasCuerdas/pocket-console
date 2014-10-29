@@ -113,7 +113,7 @@ Stats are presented in tables, formatted as you can see below:
 
 ## Or on Gemfile
 
-    gem 'pocket-console', '~> 0.1.1'
+    gem 'pocket-console', '~> 0.1.3'
 
 ## Usage
 

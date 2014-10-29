@@ -1,3 +1,7 @@
+# 0.1.3
+
+* Refactors Stats Print methods
+
 # 0.1.2
 
 * Added 'Less Unread'. Tags that are associated to the lowest amount of unread items.

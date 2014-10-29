@@ -15,179 +15,132 @@ class TagStats
   end
 
   def printMostUsed
-    @tags = @tags.sort_by{|_key, stats| stats['count']}.reverse!
-    puts '================================='
-    puts '      Tag Stats - Most Used      '
-    puts '---------------------------------'
+    @tags = @tags.sort_by{|_key, stats| stats['total']}.reverse!
+    printTitle('      Tag Stats - Most Used      ')
     printMostUsedUntilChange(10)
-    puts '================================='
+    printSeparator
   end
 
   def printLessUsed
-    @tags = @tags.sort_by{|_key, stats| stats['count']}
-    puts '================================='
-    puts '      Tag Stats - Less Used      '
-    puts '---------------------------------'
+    @tags = @tags.sort_by{|_key, stats| stats['total']}
+    printTitle('      Tag Stats - Less Used      ')
     printLessUsedUntilChange(3)
-    puts '================================='
+    printSeparator
   end
 
   def printMostUnread
     @tags = @tags.sort_by{|_key, stats| stats['unread']}.reverse!
-    puts '================================='
-    puts '     Tag Stats - Most Unread     '
-    puts '---------------------------------'
+    printTitle('     Tag Stats - Most Unread     ')
     printMostUnreadUntilChange(10)
-    puts '================================='
+    printSeparator
   end
 
   def printLessUnread
     @tags = @tags.sort_by{|_key, stats| stats['unread']}
-    puts '================================='
-    puts '     Tag Stats - Less Unread     '
-    puts '---------------------------------'
+    printTitle('     Tag Stats - Less Unread     ')
     printLessUnreadUntilChange(3)
-    puts '================================='
+    printSeparator
   end
 
 
   def printMostUsedUntilChange(changes)
-
-    puts sprintf "%-13s | %6s  | %7s", 'tag', 'total', 'unread'
-    puts '---------------------------------'
-
-    changeCount = 0
-    firstLoop = true
-    prevCount = 0
-
-    @tags.each do |tag, stats|
-
-      if (firstLoop)
-        prevCount = stats['count']
-        firstLoop = false
-      end
-
-      count = stats['count']
-      if (count < prevCount)
-        changeCount += 1
-        if (changeCount == changes)
-          break
-        end
-      end
-      prevCount = stats['count']
-
-      unread = stats['unread']
-      puts sprintf "%-13s | %6d  | %7d", tag, count, unread
-
-    end
-
+    printTableHeaderTotalUnread
+    printMostTableBody('total', 'unread',changes)
   end
-
 
   def printLessUsedUntilChange(changes)
+    printTableHeaderTotalUnread
+    printLessTableBody('total', 'unread', changes)
+  end
 
-    puts sprintf "%-13s | %6s  | %7s", 'tag', 'total', 'unread'
+  def printMostUnreadUntilChange(changes)
+    printTableHeaderUnreadTotal
+    printMostTableBody('unread', 'total', changes)
+  end
+
+  def printLessUnreadUntilChange(changes)
+    printTableHeaderUnreadTotal
+    printLessTableBody('unread', 'total', changes)
+  end
+
+  def printTableHeaderTotalUnread
+    printTableHeader('total', 'unread')
+  end
+
+  def printTableHeaderUnreadTotal
+    printTableHeader('unread', 'total')
+  end  
+
+
+  def printTableHeader(firstColumn, secondColumn)
+    puts sprintf "%-13s | %6s  | %7s", 'tag', firstColumn, secondColumn
     puts '---------------------------------'
+  end
 
-    changeCount = 0
-    prevCount = 0
+  def printTitle(title)
+    puts '================================='
+    puts title
+    puts '---------------------------------'
+  end
 
-    @tags.each do |tag, stats|
-      
-      count = stats['count']
-      if (count > prevCount)
-        changeCount += 1
-        if (changeCount == changes)
-          break
-        end
-      end
-      prevCount = stats['count']
-
-      unread = stats['unread']
-      puts sprintf "%-13s | %6d  | %7d", tag, count, unread
-
-    end
-
+  def printSeparator
+    puts '================================='
   end
 
 
-  def printMostUnreadUntilChange(changes)
+  def printRow(tag, firstColumnValue, secondColumnValue)
+    puts sprintf "%-13s | %6d  | %7d", tag, firstColumnValue, secondColumnValue
+  end
 
-    puts sprintf "%-13s | %6s  | %7s", 'tag', 'unread', 'total'
-    puts '---------------------------------'
+
+  def printMostTableBody(firstColumn, secondColumn, changes)
 
     changeCount = 0
     firstLoop = true
-    prevCount = 0
+    prevValue = 0
 
     @tags.each do |tag, stats|
       
       if (firstLoop)
-        prevCount = stats['unread']
+        prevCount = stats[firstColumn]
         firstLoop = false
       end
 
-      unread = stats['unread']
-      if (unread < prevCount)
+      firstColumnValue = stats[firstColumn]
+      if (firstColumnValue < prevValue)
         changeCount += 1
         if (changeCount == changes)
           break
         end
       end
-      prevCount = stats['unread']
+      prevValue = firstColumnValue
 
-      count = stats['count']
-      puts sprintf "%-13s | %6d  | %7d", tag, unread, count
+      secondColumnValue = stats[secondColumn]
+      printRow(tag, firstColumnValue, secondColumnValue)
 
     end
 
   end
 
 
-  def printLessUnreadUntilChange(changes)
-
-    puts sprintf "%-13s | %6s  | %7s", 'tag', 'unread', 'total'
-    puts '---------------------------------'
+  def printLessTableBody(firstColumn, secondColumn, changes)
 
     changeCount = 0
     prevCount = 0
 
     @tags.each do |tag, stats|
-
-      unread = stats['unread']
-      if (unread > prevCount)
+      
+      firstColumnValue = stats[firstColumn]
+      if (firstColumnValue > prevCount)
         changeCount += 1
         if (changeCount == changes)
           break
         end
       end
-      prevCount = stats['unread']
+      prevCount = stats[firstColumn]
 
-      count = stats['count']
-      puts sprintf "%-13s | %6d  | %7d", tag, unread, count
-
-    end
-
-  end
-
-
-  def printTopTable
-    
-    puts sprintf "%-13s | %6s  | %7s", 'tag', 'total', 'unread'
-    puts '---------------------------------'
-    top_count = 0
-
-    @tags.each do |tag, stats|
-      
-      count = stats['count']
-      unread = stats['unread']
-      puts sprintf "%-13s | %6d  | %7d", tag, count, unread
-
-      top_count += 1
-
-      if (top_count == 10)
-        break
-      end
+      secondColumnValue = stats[secondColumn]
+      printRow(tag, firstColumnValue, secondColumnValue)
 
     end
 
