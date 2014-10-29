@@ -43,6 +43,26 @@ class TagStats
   end
 
 
+  def printSpecificTerms(terms)
+    
+    specificTags = Hash.new
+    terms.each do |term|
+      if (@tags.has_key?(term))
+        specificTags[term] = @tags[term]
+      end
+    end
+
+    if (!specificTags.empty?)
+      aux = @tags
+      @tags = specificTags
+      printMostUnread
+      puts ''
+      @tags = aux
+    end
+
+  end
+
+
   def printMostUsedUntilChange(changes)
     printTableHeaderTotalUnread
     printMostTableBody('total', 'unread',changes)

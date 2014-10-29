@@ -29,6 +29,11 @@ class PocketConsole
     tagStats.print
   end
 
+  def printSpecificTermsStats(terms)
+      tagStats = TagStats.new(@tagCollection)
+      tagStats.printSpecificTerms(terms)
+  end
+
   def printItems
     items = @taggedItems + @untaggedItems
     itemsPrinter = ItemsPrinter.new(items)

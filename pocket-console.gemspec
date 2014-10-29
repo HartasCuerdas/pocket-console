@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
   s.name        = 'pocket-console'
-  s.version     = '0.1.3'
+  s.version     = '0.1.4'
   s.date        = '2014-10-28'
   s.summary     = 'Stats from Pocket on your console'
-  s.add_runtime_dependency 'pocket-classes', '~> 0.0.1'
+  s.add_runtime_dependency 'pocket-classes', '~> 0.0.3'
   s.description = 'Stats about Pocket tags, on your console.'
   s.authors     = ['Franco Cedillo']
   s.email       = 'franco.cedillo@gmail.com'

@@ -1,3 +1,7 @@
+# 0.1.4
+
+* Adds Stats for specific terms
+
 # 0.1.3
 
 * Refactors Stats Print methods
